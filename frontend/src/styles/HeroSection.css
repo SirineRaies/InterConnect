@@ -1,0 +1,146 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: #f5f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  margin: 0;
+  padding-top: 70px;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden; /* ✅ évite que les cercles sortent */
+}
+
+/* CONTENU */
+.hero-content {
+  text-align: center;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #5b7cfa, #b55cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  color: #6b6b6b;
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* COMPTEUR */
+.counter h2 {
+  font-size: 42px;
+  margin: 10px 0;
+  color: #3a3a3a;
+}
+
+.counter span {
+  font-size: 15px;
+  color: #777;
+}
+
+/* BOUTON */
+.cta-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #374eac;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #4b63c4;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 5s infinite ease-in-out;
+}
+
+.circle-blue {
+  width: 80px;
+  height: 80px;
+  background: #8b9fe8;
+  top: 20%;
+  left: 10%;
+}
+
+.circle-pink {
+  width: 60px;
+  height: 60px;
+  background: #503cb5;
+  bottom: 25%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.circle-light {
+  width: 40px;
+  height: 40px;
+  background: #cde7ff;
+  top: 60%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.circle-purple {
+  width: 70px;
+  height: 70px;
+  background: #c2a3de;
+  top: 40%;
+  right: 20%;
+  animation-delay: 1.5s;
+}
+
+.circle-teal {
+  width: 50px;
+  height: 50px;
+  background: #a8e6cf;
+  bottom: 40%;
+  left: 20%;
+  animation-delay: 2.5s;
+}
+
+
+
+.circle-lavender {
+  width: 45px;
+  height: 45px;
+  background: #e6d5ff;
+  top: 70%;
+  right: 40%;
+  animation-delay: 4s;
+}
+
+/* ANIMATION - Plus rapide et plus de mouvement */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px); /* ✅ plus de déplacement */
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}

@@ -1,0 +1,79 @@
+.Column_style_Camping{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 17px;
+    color: #7B7272;
+}
+.custom-header_Camping{
+    color: rgb(26, 26, 26);
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+.CampingsDashboardAdmin_title{
+    color:  #343da5;;
+    margin-left: 15%;
+    margin-top: 4%;
+}
+.Pourcentage_Campings_dashboardAdmin{
+    margin-left: 15%;
+    margin-top: 1%;
+    position: absolute;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
+
+.Pourcentage_items_Campings{
+  padding: 20px;
+}
+
+.ViewOfferIcon {
+  color: #1976d2;
+  margin-top: 12%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.ViewOfferIcon:hover{
+  color: #155a96;
+}
+
+.RefuseCamping {
+  color: #d32f2f;
+  cursor: pointer;
+  margin-top: 12%;
+}
+
+.RefuseCamping:hover{
+  color: #ae2828;
+}
+
+.header-with-button {
+  display: flex;
+  gap: 580px;
+}
+
+.add-offer-btn {
+  background-color: #1e73be;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.add-offer-btn:hover {
+  background-color: #155a96;
+}
+.EditOfferIcon {
+  color: #f5a623;
+  cursor: pointer;
+  margin-top: 12%;
+}
+
+.EditOfferIcon:hover {
+  color: #d48806;
+}
+
+

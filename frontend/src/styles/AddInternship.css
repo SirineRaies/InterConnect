@@ -1,0 +1,89 @@
+.form-container {
+  margin-left: 260px;
+  padding: 40px;
+}
+
+.internship-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.internship-form input,
+.internship-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.internship-form button {
+  background-color: #1e73be;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.internship-form button:hover {
+  background-color: #155a96;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon svg {
+  position: absolute;
+  left: 12px;
+  color: #888;
+}
+
+.input-icon input,
+.input-icon textarea {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-icon textarea {
+  resize: none;
+}
+
+.input-icon input:focus,
+.input-icon textarea:focus {
+  border-color: #1e73be;
+  box-shadow: 0 0 0 1px #1e73be;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #1e73be;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #155a96;
+}

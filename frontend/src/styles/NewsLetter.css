@@ -1,0 +1,131 @@
+.newsletter-wrapper {
+  position: relative;
+  background: #f5f6fa;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-card {
+  position: relative;
+  background: white;
+  max-width: 1500px;
+  width: 100%;
+  padding: 60px 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+}
+
+.newsletter-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #2c2c2c;
+}
+
+.newsletter-card p {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+/* FORM */
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  max-width: 620px;
+  margin: 0 auto;
+  border: 1px solid #dcdfe6;
+  border-radius: 40px;
+  padding: 6px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+}
+
+.newsletter-form button {
+  background: #374eac;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #4b63c4;
+}
+
+/* DOTS */
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatDots 8s infinite ease-in-out;
+}
+
+.dot-pink {
+  background: #ff7aa2;
+  bottom: 60px;
+  left: 15%;
+}
+
+.dot-green {
+  background: #6ddf7c;
+  top: 50%;
+  left: 55%;
+  animation-delay: 2s;
+}
+
+.dot-orange {
+  background: #ffb36c;
+  top: 40%;
+  right: 15%;
+  animation-delay: 4s;
+}
+
+@keyframes floatDots {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .newsletter-card {
+    padding: 40px 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

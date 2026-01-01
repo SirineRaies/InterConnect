@@ -1,0 +1,200 @@
+.sidebarDashboard {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    flex: 1;
+    border-right: 1px solid #e8e8e8;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: fixed;
+    width: 14%;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.sidebarDashboard:hover {
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.topDashboardAdmin {
+    height: 50px;
+    display: flex;
+    margin-top: 30%;
+    padding-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.topDashboardAdmin:hover {
+    transform: translateX(5px);
+}
+
+.logo_sidebarDashboardAdmin {
+    margin-top: 0%;
+    margin-left: 25%;
+    font-size: 20px;
+}
+
+.hrDashboard {
+    margin-top: 10%;
+    height: 0;
+    width: 80%;
+    border: 0.5px solid #e8e8e8;
+    transition: width 0.3s ease;
+}
+
+.ul_sidebarDashboard:hover .hrDashboard {
+    width: 85%;
+}
+
+.centerDashboard {
+    padding-left: 15px;
+    margin-top: 55%;
+}
+
+.ul_sidebarDashboard {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.ul_sidebarDashboard li {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.ul_sidebarDashboard li:hover {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width: 90%;
+    transform: translateX(5px);
+}
+
+.ul_sidebarDashboard li.active {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.ul_sidebarDashboard li:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+
+.iconSideBarDashboardDeconnexion {
+    color: rgb(224, 81, 81);
+    transition: transform 0.3s ease;
+}
+
+.ul_sidebarDashboard li:hover .iconSideBarDashboardDeconnexion {
+    transform: translateX(-2px);
+}
+
+.nom_Dashboard {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    color: #333333;
+    margin-left: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.ul_sidebarDashboard li:hover .nom_Dashboard,
+.ul_sidebarDashboard li:hover .icon-wrapper {
+    color: #4F46E5;
+    font-weight: bold;
+}
+
+.ul_sidebarDashboard li.active .nom_Dashboard {
+    color: #4F46E5;
+    font-weight: bold;
+}
+
+.nom_DashboardDeconnexion , 
+.iconlogout {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    color: rgb(224, 81, 81);
+    margin-left: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.ul_sidebarDashboard li:hover .nom_DashboardDeconnexion , 
+.ul_sidebarDashboard li:hover .iconlogout {
+    color: rgb(200, 60, 60);
+    font-weight: bold;
+
+}
+
+.bottom_sidebarDashboard {
+    margin-top: 15%;
+}
+
+/* Animation pour les éléments de la liste */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ul_sidebarDashboard li {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.ul_sidebarDashboard li:nth-child(1) { animation-delay: 0.1s; }
+.ul_sidebarDashboard li:nth-child(2) { animation-delay: 0.2s; }
+.ul_sidebarDashboard li:nth-child(3) { animation-delay: 0.3s; }
+.ul_sidebarDashboard li:nth-child(4) { animation-delay: 0.4s; }
+.bottom_sidebarDashboard li { animation-delay: 0.5s; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebarDashboard {
+        width: 20%;
+    }
+    
+    .nom_Dashboard, .nom_DashboardDeconnexion {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebarDashboard {
+        width: 70px;
+    }
+    
+    .nom_Dashboard, .nom_DashboardDeconnexion {
+        display: none;
+    }
+    
+    .topDashboardAdmin {
+        justify-content: center;
+        padding-left: 0;
+    }
+}

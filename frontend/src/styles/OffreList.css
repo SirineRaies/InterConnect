@@ -1,0 +1,284 @@
+/* OffresList.css */
+
+/* SECTION PRINCIPALE */
+.offres-section {
+  background: #f5f6fa;
+  padding: 120px 80px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.offres-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.offres-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 15px;
+}
+
+.offres-header h1 span {
+  background: linear-gradient(90deg, #5b7cfa, #b55cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.offres-header p {
+  margin-top: 14px;
+  max-width: 820px;
+  color: #6b6b6b;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* BADGE */
+.badge {
+  background: rgb(214, 217, 240);
+  color: #000000;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* PROFIL ENTREPRISE */
+.company-profile {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.company-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.company-profile-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #f0f0f0;
+}
+
+.company-logo-container h2 {
+  font-size: 28px;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.company-description h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.company-description p {
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* GRID DES OFFRES */
+.offres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD OFFRE */
+.offre-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  border-left: 6px solid;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.offre-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2c2c2c;
+}
+
+.offer-description {
+  color: #6b6b6b;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* DÉTAILS */
+.offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #5b7cfa;
+  min-width: 100px;
+  font-size: 14px;
+}
+
+.detail-item span:not(.detail-label) {
+  color: #6b6b6b;
+  font-size: 14px;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* SKILLS TAGS */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+
+.skill-tag {
+  background: #f0f2ff;
+  color: #5b7cfa;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.skill-tag.more {
+  background: #e9ecef;
+  color: #6b6b6b;
+}
+
+/* BOUTON POSTULER */
+.card-actions {
+  margin-top: auto;
+}
+
+.apply-button {
+  background: linear-gradient(90deg, #5b7cfa, #b55cff);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 15px;
+}
+
+.apply-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(91, 124, 250, 0.3);
+}
+
+/* AUCUNE OFFRE */
+.no-offers {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.no-offers p {
+  color: #6b6b6b;
+  font-size: 18px;
+}
+
+/* CHARGEMENT */
+.loading-text {
+  text-align: center;
+  padding: 100px;
+  color: #6b6b6b;
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .offres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .offres-section {
+    padding: 80px 40px;
+  }
+  
+  .offres-header {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .offres-info {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .offres-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .offres-section {
+    padding: 60px 20px;
+  }
+  
+  .company-logo-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .company-profile {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .detail-label {
+    min-width: auto;
+  }
+}

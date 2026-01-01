@@ -1,0 +1,497 @@
+/* MODAL OVERLAY */
+.application-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* MODAL CONTAINER */
+.application-modal {
+  background: white;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADER */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #6b6b6b;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #f5f6fa;
+  color: #2c2c2c;
+}
+
+/* INTERNSHIP INFO */
+.internship-info {
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #f0f2ff, #f8f9ff);
+  border-radius: 12px 12px 0 0;
+  margin: 0 30px;
+}
+
+.internship-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5b7cfa;
+  margin: 0 0 10px 0;
+}
+
+.info-text {
+  color: #6b6b6b;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* FORM */
+.application-form {
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c2c2c;
+  font-size: 14px;
+}
+
+.required {
+  color: #ff4d6d;
+  margin-right: 4px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2c2c2c;
+  background: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #5b7cfa;
+  box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.1);
+}
+
+.form-input::placeholder {
+  color: #adb5bd;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b6b6b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-help {
+  margin: 8px 0 0 0;
+  color: #6b6b6b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+  background: #fff5f5;
+  border: 1px solid #ffcccc;
+  color: #ff4d6d;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4cd964, #2ecc71);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.success-message h3 {
+  font-size: 20px;
+  color: #2c2c2c;
+  margin: 0 0 10px 0;
+}
+
+.success-message p {
+  color: #6b6b6b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* FORM ACTIONS */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cancel-btn,
+.submit-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  text-align: center;
+}
+
+.cancel-btn {
+  background: white;
+  border-color: #e9ecef;
+  color: #6b6b6b;
+}
+
+.cancel-btn:hover {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #5b7cfa, #b55cff);
+  border-color: transparent;
+  color: white;
+  position: relative;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(91, 124, 250, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* SPINNER */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* FOOTER */
+.form-footer {
+  padding: 20px 30px;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 0 0 8px 0;
+}
+
+.note {
+  font-size: 13px;
+  color: #adb5bd;
+  margin: 0;
+}
+/* Ajoutez ces styles à CreateApplicationForm.css */
+
+/* FILE UPLOAD AREA */
+.file-upload-area {
+  position: relative;
+  margin-top: 10px;
+}
+
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.upload-placeholder {
+  border: 2px dashed #e9ecef;
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  background: #f8f9ff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.file-input:hover + .upload-placeholder,
+.upload-placeholder:hover {
+  border-color: #5b7cfa;
+  background: #f0f2ff;
+}
+
+.upload-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #5b7cfa;
+}
+
+.upload-text p {
+  margin: 5px 0;
+  color: #6b6b6b;
+}
+
+.upload-hint {
+  font-size: 13px;
+  color: #adb5bd;
+}
+
+/* FILE INFO */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.file-icon {
+  font-size: 30px;
+}
+
+.file-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-details strong {
+  color: #2c2c2c;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+.file-details span {
+  color: #6b6b6b;
+  font-size: 13px;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ff4d6d;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-file:hover {
+  background: #fff5f5;
+}
+
+/* CV PREVIEW */
+.cv-preview {
+  margin-top: 15px;
+}
+
+.preview-label {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #5b7cfa;
+}
+
+/* FORM NOTES */
+.form-notes {
+  background: #f8f9ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.note-item:last-child {
+  margin-bottom: 0;
+}
+
+.note-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.note-item p {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* FORM INPUT DISABLED STATE */
+.form-input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .file-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .application-modal {
+    max-height: 95vh;
+  }
+  
+  .modal-header,
+  .internship-info,
+  .application-form,
+  .form-footer {
+    padding: 20px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .internship-info {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .application-modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-header h2 {
+    font-size: 20px;
+  }
+  
+  .internship-info h3 {
+    font-size: 16px;
+  }
+}
