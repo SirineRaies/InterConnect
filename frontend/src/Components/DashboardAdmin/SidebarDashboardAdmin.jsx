@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/sidebarDashboard.css";
+import "../../styles/SidebarDashboard.css";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import BusinessIcon from '@mui/icons-material/Business';
