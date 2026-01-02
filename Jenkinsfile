@@ -44,6 +44,27 @@ pipeline {
             '''
             }}
         }
+        stage('Security Scan - Trivy') {
+        steps {
+            sh '''
+            echo "Scanning SERVER image..."
+            docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy \
+            image --severity CRITICAL,HIGH \
+            --exit-code 1 \
+            sirineraies/interconnect-copie-server:${BUILD_NUMBER}
+
+            echo "Scanning CLIENT image..."
+            docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy \
+            image --severity CRITICAL,HIGH \
+            --exit-code 1 \
+            sirineraies/interconnect-copie-client:${BUILD_NUMBER}
+            '''
+        }
+    }
     }
     post {
         always {
