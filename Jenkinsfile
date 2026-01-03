@@ -14,12 +14,6 @@ pipeline {
         }
 
         stage('Build + Push SERVER') {
-            when { 
-                anyOf {
-                    changeset 'backend/**'
-                    changeset 'server/**'
-                }
-            }
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub',
@@ -36,12 +30,6 @@ pipeline {
         }
 
         stage('Build + Push CLIENT') {
-            when { 
-                anyOf {
-                    changeset 'frontend/**'
-                    changeset 'client/**'
-                }
-            }
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub',
@@ -58,14 +46,6 @@ pipeline {
         }
 
         stage('Security Scan - Trivy') {
-            when {
-                anyOf {
-                    changeset 'backend/**'
-                    changeset 'frontend/**'
-                    changeset 'server/**'
-                    changeset 'client/**'
-                }
-            }
             steps {
                 sh '''
                 echo "Scanning SERVER image..."
