@@ -9,8 +9,7 @@ pipeline {
         stage ('Checkout') {
             steps {
                 git branch : 'main',
-                url : 'https://github.com/SirineRaies/InterConnect.git',
-                credentialsId : 'githubtoken '
+                url : 'https://github.com/SirineRaies/InterConnect.git'
             }
         }
 
