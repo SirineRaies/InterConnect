@@ -22,7 +22,7 @@ pipeline {
                 )]) {
                     sh '''
                     echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
-                    docker build -t $IMAGE_SERVER:${BUILD_NUMBER} ./server
+                    docker build -t $IMAGE_SERVER:${BUILD_NUMBER} ./backend
                     docker push $IMAGE_SERVER:${BUILD_NUMBER}
                     '''
                 }
@@ -38,7 +38,7 @@ pipeline {
                 )]) {
                     sh '''
                     echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
-                    docker build -t $IMAGE_CLIENT:${BUILD_NUMBER} ./client
+                    docker build -t $IMAGE_CLIENT:${BUILD_NUMBER} ./frontend
                     docker push $IMAGE_CLIENT:${BUILD_NUMBER}
                     '''
                 }
