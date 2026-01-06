@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: mongo
+  tag: "6"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 27017
+
+persistence:
+  enabled: true
+  storageClass: hostpath
+  size: 5Gi
+
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: "500m"
+  limits:
+    memory: "2Gi"
+    cpu: "1"

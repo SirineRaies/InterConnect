@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: sirineraies/interconnect-copie-client
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 3000
+  nodePort: 30080
+
+env:
+  REACT_APP_API_URL: "http://localhost:30500"
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"

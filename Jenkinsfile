@@ -68,6 +68,26 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy with HELM') {
+            steps {
+                dir('k8s/Helm') {
+                    sh '''
+                    # Déploiement de MongoDB (souvent statique ou tag fixe)
+                    helm upgrade --install mongodb ./mongodb -n interconnect --create-namespace
+
+                    # Déploiement du Serveur avec le nouveau tag de l'image Jenkins
+                    helm upgrade --install server ./server -n interconnect \
+                      --set image.tag=${BUILD_NUMBER} \
+                      --set image.repository=$IMAGE_SERVER
+
+                    # Déploiement du Client avec le nouveau tag de l'image Jenkins
+                    helm upgrade --install client ./client -n interconnect \
+                      --set image.tag=${BUILD_NUMBER} \
+                      --set image.repository=$IMAGE_CLIENT
+                    '''
+                }
+            }
+        }
     }
     post {
         always {

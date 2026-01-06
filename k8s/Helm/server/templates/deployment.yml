@@ -4,7 +4,7 @@ metadata:
   name: server-deployment
   namespace: interconnect
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: interconnect-server
@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
         - name: interconnect-server
-          image: sirineraies/interconnect-copie-server:latest
-          imagePullPolicy: Always
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 5000
+            - containerPort: {{ .Values.service.port }}
           env:
             - name: PORT
               valueFrom:
@@ -35,12 +35,5 @@ spec:
                 configMapKeyRef:
                   name: app-configmap
                   key: MONGODB_DATABASE_URI
-        
           resources:
-            requests:
-              memory: "256Mi"
-              cpu: "250m"
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
-          
+            {{- toYaml .Values.resources | nindent 12 }}
