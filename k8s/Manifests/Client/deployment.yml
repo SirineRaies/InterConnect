@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  namespace: interconnect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: interconnect-client
+  template:
+    metadata:
+      labels:
+        app: interconnect-client
+    spec:
+      containers:
+        - name: interconnect-client
+          image: sirineraies/interconnect-copie-client:latest
+          imagePullPolicy: Always  # ✅ Cohérent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-configmap
+                  key: REACT_APP_API_URL
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 60
+            timeoutSeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            timeoutSeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
