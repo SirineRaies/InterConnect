@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_SERVER = 'sirineraies/interconnect-copie-server'
         IMAGE_CLIENT = 'sirineraies/interconnect-copie-client'
-        KUBECONFIG = '/var/jenkins_home/.kube/config'  // Important pour kubectl/helm
+        KUBECONFIG = '/var/jenkins_home/.kube/config'
     }
     stages {
         stage('Checkout') {
